@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173544">
+  <title>결재 서류 잡기 | 抓取审批文件</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-orb bg-orb--red" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--green" aria-hidden="true"></div>
+
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-stamp" aria-hidden="true">決</span>
+        <span class="brand-text">
+          <strong>OFFICE ARCADE</strong>
+          <small>결재과 · 审批科</small>
+        </span>
+      </div>
+      <div class="night-badge">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>야근 모드</span>
+        <span class="night-divider" aria-hidden="true">/</span>
+        <span lang="zh-CN">加班模式</span>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="gameTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>MINI GAME 05</span> 업무일지 / 工作日志</p>
+        <h1 id="gameTitle">결재 서류 <em>잡기</em></h1>
+        <p class="hero-sub">
+          밀린 결재는 오늘 안에! 30초 동안 서류를 잡아라.<br>
+          <span lang="zh-CN">堆积的审批今天处理完！在 30 秒内抓住文件。</span>
+        </p>
+        <div class="legend" aria-label="점수 규칙">
+          <span class="legend-chip legend-chip--doc">
+            <span class="legend-emoji" aria-hidden="true">📄</span>
+            <span>결재 서류 <b>+10</b></span>
+          </span>
+          <span class="legend-chip legend-chip--coffee">
+            <span class="legend-emoji" aria-hidden="true">☕</span>
+            <span>커피 <b>−5</b></span>
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-side" aria-hidden="true">
+        <span class="paperclip"></span>
+        <div class="hero-stamp">
+          <span>결재</span>
+          <small>APPROVED</small>
+        </div>
+        <span class="hero-note">오늘도<br>야근 각</span>
+      </div>
+    </section>
+
+    <section class="game-layout">
+      <div class="board-card">
+        <div class="board-bar">
+          <div class="board-heading">
+            <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="board-title">결재 트레이 <small>/ 审批托盘</small></span>
+          </div>
+          <span id="statusPill" class="status-pill status-pill--idle">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span id="statusText">대기 중</span>
+            <span id="statusSub" class="status-sub">/ 待开始</span>
+          </span>
+        </div>
+
+        <div class="board-frame">
+          <div id="board" class="board" role="group" aria-label="3 곱하기 3 결재 서류 게임판">
+            <button class="cell" type="button" data-index="0" aria-label="1번 칸, 비어 있음">
+              <span class="cell-index" aria-hidden="true">01</span>
+              <span class="cell-emoji" aria-hidden="true"></span>
+              <span class="cell-label" aria-hidden="true"></span>
+            </button>
+            <button class="cell" type="button" data-index="1" aria-label="2번 칸, 비어 있음">
+              <span class="cell-index" aria-hidden="true">02</span>
+              <span class="cell-emoji" aria-hidden="true"></span>
+              <span class="cell-label" aria-hidden="true"></span>
+            </button>
+            <button class="cell" type="button" data-index="2" aria-label="3번 칸, 비어 있음">
+              <span class="cell-index" aria-hidden="true">03</span>
+              <span class="cell-emoji" aria-hidden="true"></span>
+              <span class="cell-label" aria-hidden="true"></span>
+            </button>
+            <button class="cell" type="button" data-index="3" aria-label="4번 칸, 비어 있음">
+              <span class="cell-index" aria-hidden="true">04</span>
+              <span class="cell-emoji" aria-hidden="true"></span>
+              <span class="cell-label" aria-hidden="true"></span>
+            </button>
+            <button class="cell" type="button" data-index="4" aria-label="5번 칸, 비어 있음">
+              <span class="cell-index" aria-hidden="true">05</span>
+              <span class="cell-emoji" aria-hidden="true"></span>
+              <span class="cell-label" aria-hidden="true"></span>
+            </button>
+            <button class="cell" type="button" data-index="5" aria-label="6번 칸, 비어 있음">
+              <span class="cell-index" aria-hidden="true">06</span>
+              <span class="cell-emoji" aria-hidden="true"></span>
+              <span class="cell-label" aria-hidden="true"></span>
+            </button>
+            <button class="cell" type="button" data-index="6" aria-label="7번 칸, 비어 있음">
+              <span class="cell-index" aria-hidden="true">07</span>
+              <span class="cell-emoji" aria-hidden="true"></span>
+              <span class="cell-label" aria-hidden="true"></span>
+            </button>
+            <button class="cell" type="button" data-index="7" aria-label="8번 칸, 비어 있음">
+              <span class="cell-index" aria-hidden="true">08</span>
+              <span class="cell-emoji" aria-hidden="true"></span>
+              <span class="cell-label" aria-hidden="true"></span>
+            </button>
+            <button class="cell" type="button" data-index="8" aria-label="9번 칸, 비어 있음">
+              <span class="cell-index" aria-hidden="true">09</span>
+              <span class="cell-emoji" aria-hidden="true"></span>
+              <span class="cell-label" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div id="startOverlay" class="overlay start-overlay">
+            <div class="overlay-card start-card">
+              <div class="overlay-icon" aria-hidden="true">
+                <span class="overlay-doc">📄</span>
+                <span class="overlay-clock">⏱️</span>
+              </div>
+              <p class="overlay-kicker">SHIFT START · 09:00 PM</p>
+              <h2>30초 야근 결재</h2>
+              <p class="overlay-copy">
+                서류를 클릭하면 <b>+10점</b>, 커피를 클릭하면 <b>−5점</b>.<br>
+                <span lang="zh-CN">点击文件 +10 分，点击咖啡 −5 分。</span>
+              </p>
+              <button id="startButton" class="primary-btn" type="button">
+                <span>결재 시작</span>
+                <small>开始游戏</small>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="resultOverlay" class="overlay result-overlay" hidden>
+            <div class="overlay-card result-card">
+              <div class="result-stamp" aria-hidden="true">결재<br>완료</div>
+              <p class="overlay-kicker">SHIFT COMPLETE</p>
+              <h2 id="resultTitle">오늘의 결재 종료!</h2>
+              <p class="result-sub" lang="zh-CN">今日审批结束！</p>
+              <div class="result-score-wrap">
+                <span class="result-label">이번 점수 / 本次得分</span>
+                <div class="result-score"><strong id="resultScore">0</strong><span>점</span></div>
+              </div>
+              <div class="result-best">
+                <span>최고 기록 / 最高纪录</span>
+                <strong><span id="resultHigh">0</span>점</strong>
+              </div>
+              <p id="newRecordBadge" class="new-record" hidden>★ 신기록! / 新纪录！</p>
+              <button id="restartButton" class="primary-btn" type="button">
+                <span>다시 도전</span>
+                <small>再来一局</small>
+                <span class="btn-arrow" aria-hidden="true">↻</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="board-foot">
+          <span class="key-hint"><kbd>1</kbd>–<kbd>9</kbd> 키로도 잡을 수 있어요 / 也可用数字键</span>
+          <span class="coffee-warning"><span aria-hidden="true">☕</span> 커피는 건드리지 마세요! / 别碰咖啡！</span>
+        </div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="score-card" id="scoreCard">
+          <span class="score-card-kicker">CURRENT SCORE</span>
+          <span class="score-card-label">이번 결재 점수 / 本轮得分</span>
+          <div class="score-number">
+            <span id="scoreValue">0</span><span class="score-unit">점</span>
+          </div>
+          <span class="score-check" aria-hidden="true">✓</span>
+        </div>
+
+        <div class="mini-stats">
+          <div class="mini-card">
+            <span class="mini-label">최고 기록<small>最高纪录</small></span>
+            <div><strong id="highScoreValue">0</strong><span class="mini-unit">점</span></div>
+          </div>
+          <div class="mini-card time-card" id="timeCard">
+            <span class="mini-label">남은 시간<small>剩余时间</small></span>
+            <div><strong><span id="timeValue">30.0</span><small class="seconds">s</small></strong></div>
+          </div>
+        </div>
+        <div class="timer-track" aria-hidden="true"><div id="timerFill"></div></div>
+
+        <div class="memo-card">
+          <span class="memo-tape" aria-hidden="true"></span>
+          <div class="memo-head">
+            <h2>업무 지침</h2>
+            <span>工作须知</span>
+          </div>
+          <ul class="memo-list">
+            <li>
+              <span class="memo-icon" aria-hidden="true">📄</span>
+              <div><b>서류를 잡아라</b><small>点击文件 +10</small></div>
+              <em>+10</em>
+            </li>
+            <li>
+              <span class="memo-icon" aria-hidden="true">☕</span>
+              <div><b>커피는 피해라</b><small>避开咖啡 −5</small></div>
+              <em class="minus">−5</em>
+            </li>
+            <li>
+              <span class="memo-icon" aria-hidden="true">⏱️</span>
+              <div><b>30초 안에 끝내라</b><small>30 秒内完成</small></div>
+              <em>30s</em>
+            </li>
+          </ul>
+        </div>
+
+        <p class="storage-note">
+          <span aria-hidden="true">💾</span>
+          최고 기록은 이 브라우저에 저장됩니다.<br>
+          <span lang="zh-CN">最高纪录会保存在此浏览器中。</span>
+        </p>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <span>NO INSTALL · NO SERVER · JUST DOUBLE-CLICK</span>
+      <span>M1 HOBBY SITE © 2026</span>
+    </footer>
+  </main>
+
+  <div id="announcer" class="sr-only" aria-live="polite"></div>
+  <script src="game.js"></script>
+</body>
+</html>
